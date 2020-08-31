@@ -11,7 +11,7 @@ enum WeatherbitError: Error {
 class WeatherbitService {
     typealias WeatherDataCompletion = (WeatherbitData?, WeatherbitError?) -> Void
 
-    private static let apiKey = "your key goes here"
+    private static let apiKey = "b5573aa3a29144dfbef4aeea163a0545"
     private static let host = "api.weatherbit.io"
     private static let path = "/v2.0/current"
     private static let fahrenheit = "I"
@@ -56,11 +56,11 @@ class WeatherbitService {
                     return
                 }
 
-                guard response.statusCode == 200 else {
-                    print("Failure response from Weatherbit: \(response.statusCode)")
-                    completion(nil, .failedRequest)
-                    return
-                }
+//                guard response.statusCode == 200 else {
+//                    print("Failure response from Weatherbit: \(response.statusCode)")
+//                    completion(nil, .failedRequest)
+//                    return
+//                }
 
                 do {
                     let decoder = JSONDecoder()
