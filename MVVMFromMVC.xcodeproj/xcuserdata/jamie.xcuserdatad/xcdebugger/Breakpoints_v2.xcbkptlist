@@ -14,8 +14,8 @@
             filePath = "MVVMFromMVC/Services/WeatherbitService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "weatherDataForLocation(latitude:longitude:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "MVVMFromMVC/Services/WeatherbitService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "weatherDataForLocation(latitude:longitude:completion:)"
             landmarkType = "7">
          </BreakpointContent>
