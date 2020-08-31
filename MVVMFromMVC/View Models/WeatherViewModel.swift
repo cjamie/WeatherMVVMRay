@@ -22,21 +22,6 @@ final class WeatherViewModel {
     
     let locationName = Box("Loading...")
     
-//    func geocode() {
-//
-//        geocoder.geocode(addressString: Constants.defaultAddress) { [weak self] locations in
-//            guard
-//                let self = self,
-//                let location = locations.first
-//                else {
-//                    return
-//            }
-//            print("-=- 1")
-//            self.fetchWeatherForLocation(location)
-//        }
-//
-//    }
-    
     func fetchWeatherForLocation(_ location: Location) {
         // 1
         WeatherbitService.weatherDataForLocation(

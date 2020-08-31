@@ -37,7 +37,7 @@ class WeatherViewController: UIViewController {
 
     }
 
-    @IBAction func didPromptForLocation(_ sender: UIButton) {
+    @IBAction private func didPromptForLocation(_ sender: UIButton) {
         
         let alert = UIAlertController(title: "Choose location", message: nil, preferredStyle: .alert)
         
