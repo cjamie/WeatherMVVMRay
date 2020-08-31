@@ -37,4 +37,20 @@ class WeatherViewController: UIViewController {
 
     }
 
+    @IBAction func didPromptForLocation(_ sender: UIButton) {
+        
+        let alert = UIAlertController(title: "Choose location", message: nil, preferredStyle: .alert)
+        
+        
+        let submitAction = UIAlertAction(title: "submit", style: .default) { [weak self] _ in
+            guard let newLocation = alert.textFields?.first?.text else { return }
+            
+            self?.viewModel.changeLocation(newLocation)
+        }
+        
+        alert.addAction(submitAction)
+        alert.addTextField()
+        present(alert, animated: true)
+        
+    }
 }

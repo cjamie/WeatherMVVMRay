@@ -60,6 +60,25 @@ final class WeatherViewModel {
         
     }
     
+    func changeLocation(_ newLocation: String) {
+        locationName.value = "Loading..."
+        
+        geocoder.geocode(addressString: newLocation) { [weak self] locations in
+            guard let self = self else{ return }
+            
+            guard let validLocation = locations.first else {
+                self.locationName.value = "Not found"
+                self.date.value = " "
+                self.currentIcon.value = nil
+                self.currentSummary.value = ""
+                self.forecastSummary.value = ""
+                return
+            }
+            
+            self.fetchWeatherForLocation(validLocation)
+            
+        }
+    }
     // MARK: - Helpers
     
     let date = Box(Constants.emptyString)
@@ -80,23 +99,4 @@ final class WeatherViewModel {
         return tempFormatter
     }()
     
-    private func changeLocation(_ newLocation: String) {
-        locationName.value = "Loading..."
-        
-        geocoder.geocode(addressString: newLocation) { [weak self] locations in
-            guard let self = self else{ return }
-            
-            guard let validLocation = locations.first else {
-                self.locationName.value = "Not found"
-                self.date.value = " "
-                self.currentIcon.value = nil
-                self.currentSummary.value = ""
-                self.forecastSummary.value = ""
-                return
-            }
-            
-            self.fetchWeatherForLocation(validLocation)
-            
-        }
-    }
 }
